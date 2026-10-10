@@ -4,6 +4,12 @@ Este repositório documenta a criação do meu **Segundo Cérebro com IA** desen
 
 ---
 
+## 🔗 Link do Caderno Compartilhado
+
+- 🎓 [Agentes de IA e Automação de Conteúdo Técnico](https://gemini.google.com/notebook/ee7b447d-3d45-41d4-a6ed-45bd6d722a29)
+
+---
+
 ## 🎯 Objetivo
 
 > **Frase de Objetivo:** Construir um ecossistema autônomo de estudo e criação de conteúdo onde um agente de IA em Python cura feeds RSS, consulta o Gemini Notebook como base de conhecimento RAG e gera artigos técnicos fundamentados para blog e LinkedIn.
@@ -15,11 +21,11 @@ Este repositório documenta a criação do meu **Segundo Cérebro com IA** desen
 As fontes foram criteriosamente escolhidas para fundamentar a arquitetura e garantir exatidão técnica:
 
 1. **Arquitetura do Agente Python (`agent.py`)**  
-   - *Tipo:* Documentação e Código Fonte (Texto/Markdown)[cite: 1]  
-   - *Motivo da Escolha:* Define a estrutura de coleta via RSS, filtragem por relevância e geração de posts para o blog Jekyll (Chirpy)[cite: 1].
+   - *Tipo:* Documentação e Código Fonte (Texto/Markdown)  
+   - *Motivo da Escolha:* Define a estrutura de coleta via RSS, filtragem por relevância e geração de posts para o blog Jekyll (Chirpy).
 2. **Guia de Integração Python & Gemini Notebook (API & RAG)**  
-   - *Tipo:* Guia Técnico e Exemplos de Código (Texto/Markdown)[cite: 2]  
-   - *Motivo da Escolha:* Detalha como conectar o Gemini SDK via Python para consultar fragmentos do caderno (`retrieve_relevant_chunks`) e eliminar alucinações na geração de artigos[cite: 2].
+   - *Tipo:* Guia Técnico e Exemplos de Código (Texto/Markdown)  
+   - *Motivo da Escolha:* Detalha como conectar o Gemini SDK via Python para consultar fragmentos do caderno (`retrieve_relevant_chunks`) e eliminar alucinações na geração de artigos.
 3. **Documentação Oficial e Tutoriais da Gemini API / NotebookLM**  
    - *Tipo:* Artigo Técnico e Vídeo de Referência (Web/Vídeo)  
    - *Motivo da Escolha:* Garante conformidade com as diretrizes da API do Google Gemini e padrão de citações da ferramenta.
@@ -36,15 +42,18 @@ A seguinte diretriz foi atribuída ao caderno para orientar o modelo:
 
 ## 💬 Perguntas, Respostas e Citações de Evidência
 
-### Pergunta 1:
+### Pergunta:
 > **"Como o agente Python se integra ao Gemini Notebook e quais são os principais benefícios dessa abordagem?"**
 
 **Resposta do Gemini Notebook:**  
-O agente em Python integra-se ao Gemini Notebook atuando em duas frentes principais[cite: 2]:
-- **Alimentação Dinâmica:** O script Python envia novos artigos e documentações diretamente para o caderno mantendo a base de conhecimento atualizada[cite: 2].
-- **Consultas RAG de Alta Precisão:** Antes de gerar um artigo para o blog ou post do LinkedIn, o script realiza consultas ao caderno (`retrieve_relevant_chunks`) para extrair fatos comprovados e trechos de código[cite: 2].
+O agente em Python integra-se ao Gemini Notebook atuando em duas frentes principais:
+- **Alimentação Dinâmica:** O script Python envia novos artigos e documentações diretamente para o caderno, mantendo a base de conhecimento atualizada *(Fonte: Guia de Integração Python & Gemini Notebook)*.
+- **Consultas RAG de Alta Precisão:** Antes de gerar um artigo para o blog ou post do LinkedIn, o script realiza consultas ao caderno via `retrieve_relevant_chunks` para extrair fatos comprovados e trechos de código *(Fonte: Guia de Integração Python & Gemini Notebook)*.
 
-Os principais benefícios incluem a **eliminação de alucinações** (conteúdo gerado estritamente com base nos dados verificados)[cite: 2], **rastreabilidade total** com citação das fontes originais[cite: 2] e um **ciclo fechado de aprendizado**, onde novos conhecimentos enriquecem a base de dados do agente[cite: 2].
+**Benefícios Identificados:**
+- **Eliminação de alucinações:** O conteúdo é gerado estritamente com base em dados verificados no caderno *(Fonte: Guia de Integração Python & Gemini Notebook)*.
+- **Rastreabilidade total:** Cada afirmação possui citação direta da fonte primária *(Fonte: Guia de Integração Python & Gemini Notebook)*.
+- **Ciclo fechado de aprendizado:** Novos aprendizados do usuário enriquecem o caderno, que por sua vez capacita o agente de IA a criar conteúdos cada vez mais profundos e autênticos *(Fonte: Guia de Integração Python & Gemini Notebook)*.
 
 ---
 
@@ -52,13 +61,15 @@ Os principais benefícios incluem a **eliminação de alucinações** (conteúdo
 
 Os seguintes artefatos foram gerados pelo caderno e estão armazenados neste repositório na pasta `/assets`:
 
-- 🗺️ `mapa_mental_agentes_ia.png` — Visualização gráfica do fluxo entre RSS, Agente Python, Gemini Notebook e Blog/LinkedIn.
-- 📊 `slides_arquitetura_agente.pdf` — Apresentação executiva da arquitetura do projeto.
-- 📝 `guia_de_estudos_quiz.md` — Guia interativo contendo perguntas e respostas para testar o aprendizado.
-- 🎧 `podcast_resumo_executivo.mp3` — Resumo em áudio sobre o papel dos agentes de IA na automação de conteúdo.
+- 🗺️ `assets/mapa_mental_agentes_ia.png` — Visualização gráfica do fluxo entre RSS, Agente Python, Gemini Notebook e Blog/LinkedIn.
+- 📊 `assets/slides_arquitetura_agente.pdf` — Apresentação executiva da arquitetura do projeto.
+- 📝 `assets/guia_de_estudos_quiz.md` — Guia interativo contendo perguntas e respostas para testar o aprendizado.
+- 📸 `assets/print_chat_citacoes.png` — Captura de tela demonstrando as respostas do chat com as devidas citações de fontes.
 
 ---
 
-## 🔗 Link do Caderno Compartilhado
+## 🚀 Como Executar e Reproduzir
 
-- 🎓 **Gemini Notebook:** [Acessar Caderno Especialista](https://gemini.google.com/notebook/ee7b447d-3d45-41d4-a6ed-45bd6d722a29)
+1. Acesse o caderno compartilhado: 🎓 [Agentes de IA e Automação de Conteúdo Técnico](https://gemini.google.com/notebook/ee7b447d-3d45-41d4-a6ed-45bd6d722a29).
+2. Adicione ou atualize suas fontes de estudo no painel esquerdo.
+3. Utilize o script em Python (`agent.py`) configurado com sua `GEMINI_API_KEY` para realizar consultas RAG automáticas via API.
