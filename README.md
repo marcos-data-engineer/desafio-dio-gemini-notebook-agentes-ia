@@ -1,6 +1,6 @@
 # 🧠 Segundo Cérebro com IA: Agentes de IA e Automação de Conteúdo Técnico
 
-Este repositório documenta a criação do meu **Segundo Cérebro com IA** desenvolvido no **Gemini Notebook** (anteriormente NotebookLM) como projeto prático para o desafio da **DIO (Digital Innovation One)**. 
+Este repositório documenta a criação do meu **Segundo Cérebro com IA** desenvolvido no **Gemini Notebook** (anteriormente NotebookLM) como projeto prático para o desafio da **DIO (Digital Innovation One)**.
 
 O projeto une pesquisa avançada em Inteligência Artificial, curadoria de fontes de alta confiabilidade e geração de conteúdo técnico totalmente fundamentado e livre de alucinações.
 
@@ -22,20 +22,20 @@ O projeto une pesquisa avançada em Inteligência Artificial, curadoria de fonte
 
 As fontes inseridas no caderno foram selecionadas com base em rigor científico, autoridade técnica e diversidade de formatos:
 
-1. **OpenAI — Planning for AGI and Beyond (Artigo / Documentação)**  
-   - *Motivo:* Define o panorama e as visões estratégicas sobre a evolução e governança da AGI.
-2. **Yann LeCun / Meta AI — World Models & JEPA (Palestras & Artigos Técnicos)**  
-   - *Motivo:* Apresenta a crítica fundamentada ao *scaling laws* em LLMs e introduz as arquiteturas baseadas em modelos de mundo (*Joint Embedding Predictive Architecture*).
-3. **ArXiv AI / Feeds de Pesquisa (Artigos Científicos em RSS)**  
-   - *Motivo:* Prover dados atualizados sobre aprendizado por reforço, otimização e robótica.
-4. **Arquitetura do Agente Python (`agent.py`) & Guia RAG com Gemini SDK (Código & Markdown)**  
-   - *Motivo:* Documentação interna do pipeline que integra o script Python ao Gemini Notebook via chamadas de API (`retrieve_relevant_chunks`).
+1. **OpenAI — Planning for AGI and Beyond (Artigo / Documentação)**
+   - _Motivo:_ Define o panorama e as visões estratégicas sobre a evolução e governança da AGI.
+2. **Yann LeCun / Meta AI — World Models & JEPA (Palestras & Artigos Técnicos)**
+   - _Motivo:_ Apresenta a crítica fundamentada ao _scaling laws_ em LLMs e introduz as arquiteturas baseadas em modelos de mundo (_Joint Embedding Predictive Architecture_).
+3. **ArXiv AI / Feeds de Pesquisa (Artigos Científicos em RSS)**
+   - _Motivo:_ Prover dados atualizados sobre aprendizado por reforço, otimização e robótica.
+4. **Arquitetura do Agente Python (`agent.py`) & Guia RAG com Gemini SDK (Código & Markdown)**
+   - _Motivo:_ Documentação interna do pipeline que integra o script Python ao Gemini Notebook via chamadas de API (`retrieve_relevant_chunks`).
 
 ---
 
 ## 🤖 Diretriz de Comportamento do Notebook (System Persona)
 
-> *"Comporte-se como um Engenheiro de Dados e Pesquisador Especialista em Inteligência Artificial. Suas respostas devem ser estritamente baseadas nas fontes fornecidas, citando trechos e referências exatas. Ajude na revisão de código, na estruturação de artigos técnicos para blog/LinkedIn e no design de arquiteturas de agentes autônomos."*
+> _"Comporte-se como um Engenheiro de Dados e Pesquisador Especialista em Inteligência Artificial. Suas respostas devem ser estritamente baseadas nas fontes fornecidas, citando trechos e referências exatas. Ajude na revisão de código, na estruturação de artigos técnicos para blog/LinkedIn e no design de arquiteturas de agentes autônomos."_
 
 ---
 
@@ -65,3 +65,35 @@ Instruções e Estrutura para o Arquivo `LLMtoAGI.md`:
 
 4. Citações e Fundamentação:
    - Insira citações explícitas entre colchetes [Fonte: Nome da Fonte / Pesquisa] ao longo dos tópicos para demonstrar fundamentação nas fontes.
+
+```
+
+---
+
+## 💬 Perguntas, Respostas e Citações de Evidência
+
+### Consulta Efetuada ao Caderno:
+
+> **"Como a arquitetura JEPA supera a acumulação de erros dos modelos auto-regressivos e qual a diferença em relação às LLMs?"**
+
+**Resposta do Gemini Notebook:**
+Enquanto os LLMs auto-regressivos sofrem com a **divergência estocástica exponencial** — onde um erro minúsculo compromete toda a cadeia de geração —, a arquitetura **JEPA (Joint Embedding Predictive Architecture)** realiza a predição no **espaço de representação abstrata**, eliminando detalhes imprevisíveis em nível de pixel ou palavras _(Fonte: Yann LeCun - Harvard CMSA Lecture)_. Isso permite que o sistema projete estados futuros em seu Modelo de Mundo mantendo coerência causal e estabilidade matemática _(Fonte: Yann LeCun - ETH Zurich Lecture)_.
+
+---
+
+## 🎨 Materiais de Estudo Gerados no Estúdio
+
+Os artefatos gerados no estúdio do Gemini Notebook estão armazenados na pasta `/assets`:
+
+- 🗺️ `assets/mapa_mental_agentes_ia.png` — Fluxo do ecossistema RAG + Agente Python.
+- 📊 `assets/slides_arquitetura_agente.pdf` — Apresentação executiva do projeto.
+- 📝 `assets/guia_de_estudos_quiz.md` — Guia de testes e fixação do aprendizado.
+- 📸 `assets/print_chat_citacoes.png` — Captura de tela comprovando o uso de citações diretas no chat.
+
+---
+
+## 🚀 Como Executar e Reproduzir
+
+1. Acesse o [Gemini Notebook Compartilhado](https://gemini.google.com/notebook/ee7b447d-3d45-41d4-a6ed-45bd6d722a29).
+2. Adicione novas fontes na aba de curadoria (artigos em PDF, URLs da web ou vídeos do YouTube).
+3. Execute o script `agent.py` configurado com sua `GEMINI_API_KEY` para realizar consultas de Grounding automáticas via API Gemini.
