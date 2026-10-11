@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <!-- Fundo Dark Theme -->
+  <rect width="800" height="480" fill="#0f172a" rx="12"/>
+  
+  <!-- Título -->
+  <text x="400" y="36" text-anchor="middle" fill="#f8fafc" font-family="sans-serif" font-size="18" font-weight="bold">Arquitetura JEPA vs. Modelo Gerativo (Pixel-Level)</text>
+  <text x="400" y="56" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12">Predição em Nível de Pixel (Caos) vs. Predição em Espaço de Representação Abstrata (Semântica)</text>
+
+  <!-- PAINEL 1: MODELO GERATIVO TRADICIONAL -->
+  <g transform="translate(40, 80)">
+    <rect x="0" y="0" width="720" height="155" fill="#1e1b4b" rx="8" stroke="#ef4444" stroke-width="1.5" opacity="0.9"/>
+    
+    <text x="20" y="28" fill="#f87171" font-family="sans-serif" font-size="14" font-weight="bold">1. Modelo Gerativo Auto-Regressivo / Difusão (Nível de Pixel)</text>
+
+    <!-- Fluxo Modelo Gerativo -->
+    <rect x="30" y="48" width="100" height="50" fill="#312e81" rx="4" stroke="#6366f1" stroke-width="1"/>
+    <text x="80" y="72" text-anchor="middle" fill="#e0e7ff" font-family="sans-serif" font-size="11" font-weight="bold">Entrada (x)</text>
+    <text x="80" y="86" text-anchor="middle" fill="#a5b4fc" font-family="sans-serif" font-size="9">Frame / Vídeo</text>
+
+    <line x1="130" y1="73" x2="180" y2="73" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="180" y="48" width="150" height="50" fill="#4338ca" rx="4" stroke="#818cf8" stroke-width="1"/>
+    <text x="255" y="72" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">Gerador / Decoder</text>
+    <text x="255" y="86" text-anchor="middle" fill="#c7d2fe" font-family="sans-serif" font-size="9">Reconstrução em Pixel</text>
+
+    <line x1="330" y1="73" x2="380" y2="73" stroke="#818cf8" stroke-width="2"/>
+
+    <rect x="380" y="48" width="130" height="50" fill="#7f1d1d" rx="4" stroke="#ef4444" stroke-width="1"/>
+    <text x="445" y="72" text-anchor="middle" fill="#fca5a5" font-family="sans-serif" font-size="11" font-weight="bold">Saída Reconstruída (y)</text>
+    <text x="445" y="86" text-anchor="middle" fill="#fecaca" font-family="sans-serif" font-size="9">Pixels Futuros</text>
+
+    <!-- Warning Card -->
+    <rect x="530" y="45" width="170" height="95" fill="#450a0a" rx="6" stroke="#f87171" stroke-width="1"/>
+    <text x="615" y="66" text-anchor="middle" fill="#fca5a5" font-family="sans-serif" font-size="11" font-weight="bold">⚠️ Falha Estrutural</text>
+    <text x="615" y="84" text-anchor="middle" fill="#fef2f2" font-family="sans-serif" font-size="9.5">Tenta adivinhar cada pixel</text>
+    <text x="615" y="98" text-anchor="middle" fill="#fef2f2" font-family="sans-serif" font-size="9.5">(vento nas folhas, ruído).</text>
+    <text x="615" y="112" text-anchor="middle" fill="#f87171" font-family="sans-serif" font-size="9.5" font-weight="bold">Impossível em Vídeos Longos</text>
+  </g>
+
+  <!-- PAINEL 2: ARQUITETURA JEPA (YANN LECUN) -->
+  <g transform="translate(40, 255)">
+    <rect x="0" y="0" width="720" height="205" fill="#064e3b" rx="8" stroke="#10b981" stroke-width="1.5" opacity="0.9"/>
+    
+    <text x="20" y="28" fill="#34d399" font-family="sans-serif" font-size="14" font-weight="bold">2. Arquitetura JEPA (Joint Embedding Predictive Architecture)</text>
+
+    <!-- Entrada X -->
+    <rect x="30" y="48" width="90" height="42" fill="#065f46" rx="4" stroke="#34d399" stroke-width="1"/>
+    <text x="75" y="73" text-anchor="middle" fill="#ecfdf5" font-family="sans-serif" font-size="10" font-weight="bold">Entrada (x)</text>
+
+    <line x1="120" y1="69" x2="150" y2="69" stroke="#34d399" stroke-width="2"/>
+
+    <!-- Encoder X -->
+    <rect x="150" y="48" width="100" height="42" fill="#047857" rx="4" stroke="#10b981" stroke-width="1"/>
+    <text x="200" y="73" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">Encoder (Ex)</text>
+
+    <line x1="250" y1="69" x2="280" y2="69" stroke="#34d399" stroke-width="2"/>
+
+    <!-- Espaço Abstrato Sx -->
+    <rect x="280" y="48" width="110" height="42" fill="#15803d" rx="4" stroke="#22c55e" stroke-width="1"/>
+    <text x="335" y="67" text-anchor="middle" fill="#f0fdf4" font-family="sans-serif" font-size="10" font-weight="bold">Representação (Sx)</text>
+    <text x="335" y="80" text-anchor="middle" fill="#bbf7d0" font-family="sans-serif" font-size="8.5">Conceitos Abstratos</text>
+
+    <line x1="390" y1="69" x2="420" y2="69" stroke="#34d399" stroke-width="2"/>
+
+    <!-- Predictor -->
+    <rect x="420" y="48" width="100" height="42" fill="#166534" rx="4" stroke="#4ade80" stroke-width="1"/>
+    <text x="470" y="73" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">Predictor (P)</text>
+
+    <line x1="520" y1="69" x2="550" y2="69" stroke="#34d399" stroke-width="2"/>
+
+    <!-- Predição Sy_hat -->
+    <rect x="550" y="48" width="130" height="42" fill="#14532d" rx="4" stroke="#22c55e" stroke-width="1"/>
+    <text x="615" y="67" text-anchor="middle" fill="#dcfce7" font-family="sans-serif" font-size="10" font-weight="bold">Predição (ŝy)</text>
+    <text x="615" y="80" text-anchor="middle" fill="#86efac" font-family="sans-serif" font-size="8.5">Estado Futuro Abstrato</text>
+
+    <!-- Linha Inferior: Entrada Y -->
+    <rect x="30" y="140" width="90" height="42" fill="#065f46" rx="4" stroke="#34d399" stroke-width="1"/>
+    <text x="75" y="165" text-anchor="middle" fill="#ecfdf5" font-family="sans-serif" font-size="10" font-weight="bold">Alvo Real (y)</text>
+
+    <line x1="120" y1="161" x2="150" y2="161" stroke="#34d399" stroke-width="2"/>
+
+    <rect x="150" y="140" width="100" height="42" fill="#047857" rx="4" stroke="#10b981" stroke-width="1"/>
+    <text x="200" y="165" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">Encoder (Ey)</text>
+
+    <line x1="250" y1="161" x2="550" y2="161" stroke="#34d399" stroke-width="2"/>
+    <line x1="550" y1="161" x2="550" y2="105" stroke="#34d399" stroke-width="2"/>
+
+    <!-- Loss Comparison -->
+    <circle cx="615" cy="130" r="18" fill="#15803d" stroke="#4ade80" stroke-width="1.5"/>
+    <text x="615" y="134" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold">Min L</text>
+
+    <!-- Advantage Card -->
+    <rect x="280" y="115" width="240" height="70" fill="#022c22" rx="6" stroke="#34d399" stroke-width="1"/>
+    <text x="400" y="135" text-anchor="middle" fill="#a7f3d0" font-family="sans-serif" font-size="10.5" font-weight="bold">✨ Vantagem do Espaço de Representação</text>
+    <text x="400" y="152" text-anchor="middle" fill="#ecfdf5" font-family="sans-serif" font-size="9">Ignora ruídos de pixel irrelevantes.</text>
+    <text x="400" y="166" text-anchor="middle" fill="#ecfdf5" font-family="sans-serif" font-size="9">Aprende Leis da Física &amp; Estrutura do Mundo Real.</text>
+  </g>
+</svg>
